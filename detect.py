@@ -48,10 +48,10 @@ from utils.torch_utils import select_device, time_sync
 
 @torch.no_grad()
 def run(
-        weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
+        weights='yolov5m.pt',  # model.pt path(s)
         source=ROOT / 'data/images',  # file/dir/URL/glob, 0 for webcam
         data=ROOT / 'data/coco128.yaml',  # dataset.yaml path
-        imgsz=(640, 640),  # inference size (height, width)
+        imgsz=(480, 480),  # inference size (height, width)
         conf_thres=0.25,  # confidence threshold
         iou_thres=0.45,  # NMS IOU threshold
         max_det=1000,  # maximum detections per image
