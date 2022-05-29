@@ -47,6 +47,25 @@ from utils.torch_utils import select_device, time_sync
 import streamlit as st
 from PIL import Image
 
+def get_subdirs(b='.'):
+    '''
+        Returns all sub-directories in a specific Path
+    '''
+    result = []
+    for d in os.listdir(b):
+        bd = os.path.join(b, d)
+        if os.path.isdir(bd):
+            result.append(bd)
+    return result
+
+
+def get_detection_folder():
+    '''
+        Returns the latest folder in a runs\detect
+    '''
+    return max(get_subdirs(os.path.join('runs', 'detect')), key=os.path.getmtime)
+
+
 @torch.no_grad()
 def run(
         weights='yolov5m.pt',  # model.pt path(s)
