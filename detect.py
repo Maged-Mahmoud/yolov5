@@ -58,7 +58,6 @@ def get_subdirs(b='.'):
             result.append(bd)
     return result
 
-
 def get_detection_folder():
     '''
         Returns the latest folder in a runs\detect
