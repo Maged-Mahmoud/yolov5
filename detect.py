@@ -44,6 +44,25 @@ from utils.general import (LOGGER, check_file, check_img_size, check_imshow, che
                            increment_path, non_max_suppression, print_args, scale_coords, strip_optimizer, xyxy2xywh)
 from utils.plots import Annotator, colors, save_one_box
 from utils.torch_utils import select_device, time_sync
+import streamlit as st
+from PIL import Image
+
+def get_subdirs(b='.'):
+    '''
+        Returns all sub-directories in a specific Path
+    '''
+    result = []
+    for d in os.listdir(b):
+        bd = os.path.join(b, d)
+        if os.path.isdir(bd):
+            result.append(bd)
+    return result
+
+def get_detection_folder():
+    '''
+        Returns the latest folder in a runs\detect
+    '''
+    return max(get_subdirs(os.path.join('runs', 'detect')), key=os.path.getmtime)
 
 
 @torch.no_grad()
@@ -276,7 +295,7 @@ def main(opt):
         print('valid')
         if st.button('开始检测'):
 
-            detect(opt)
+            run(**vars(opt))
 
             if source_index == 0:
                 with st.spinner(text='Preparing Images'):
