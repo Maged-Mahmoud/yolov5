@@ -277,7 +277,7 @@ def main(opt):
         print('valid')
         if st.button('开始检测'):
 
-            detect(opt)
+            run(opt)
 
             if source_index == 0:
                 with st.spinner(text='Preparing Images'):
