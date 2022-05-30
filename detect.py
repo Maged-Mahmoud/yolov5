@@ -263,10 +263,10 @@ def parse_opt():
 
 def main(opt):
     check_requirements(exclude=('tensorboard', 'thop'))
-    
+    st.set_page_config(page_title = 'Drill Bit Failure Detection', page_icon = cv2.imread('images.jpg'))
     st.title('Welcome to Drill Bit Failure Detection Project! V 1.0 DEMO')
     st.subheader('Presented to upstream oil and gas industry: Upload images and then Detect the type of failure then define the root cause of failure')
-    st.set_page_config(page_title = 'Drill Bit Failure Detection')
+    
     hide_menu_style = '''
     <style>
     # MainMenu{visibility: hidden;}
