@@ -272,10 +272,10 @@ def main(opt):
     # MainMenu{visibility: hidden;}
     footer {visibility: hidden;}
     .reportview-container {
-        background: url("oil-well.jpg")
+        background: url("data:oil-well.jpg;base64,{base64.b64encode(open(main_bg, "rb").read()).decode()}oil-well.jpg")
     }
    .sidebar .sidebar-content {
-        background: url("oil-well.jpg")
+        background: url("data:oil-well.jpg;base64,{base64.b64encode(open(main_bg, "rb").read()).decode()}")
     }
     </style>
     
