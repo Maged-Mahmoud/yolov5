@@ -270,10 +270,10 @@ def main(opt):
     """
     <style>
     .reportview-container {
-        background: url("https://images.app.goo.gl/LFCobouKtT7oZ7Qv7")
+        background: url("https://github.com/Maged-Mahmoud/yolov5-Drill-Bit-Failure-Detection/blob/master/oil-well.jpg")
     }
    .sidebar .sidebar-content {
-        background: url("https://images.app.goo.gl/LFCobouKtT7oZ7Qv7")
+        background: url("https://github.com/Maged-Mahmoud/yolov5-Drill-Bit-Failure-Detection/blob/master/oil-well.jpg")
     }
     </style>
     """,
