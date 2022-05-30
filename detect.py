@@ -263,13 +263,16 @@ def parse_opt():
 
 def main(opt):
     check_requirements(exclude=('tensorboard', 'thop'))
-    source = ("图片检测", "视频检测")
-    source_index = st.sidebar.selectbox("选择输入", range(
+    
+    st.title('Welcome to Drill Bit Failure Detection Project! V 1.0 DEMO')
+    st.subheader('Presented to upstream oil and gas industry: Upload images and then Detect the type of failure then define the root cause of failure')
+    source = ("IMAGE", "VIDEO")
+    source_index = st.sidebar.selectbox("Source", range(
         len(source)), format_func=lambda x: source[x])
 
     if source_index == 0:
         uploaded_file = st.sidebar.file_uploader(
-            "上传图片", type=['png', 'jpeg', 'jpg'])
+            "Upload", type=['png', 'jpeg', 'jpg'])
         if uploaded_file is not None:
             is_valid = True
             with st.spinner(text='资源加载中...'):
@@ -280,7 +283,7 @@ def main(opt):
         else:
             is_valid = False
     else:
-        uploaded_file = st.sidebar.file_uploader("上传视频", type=['mp4'])
+        uploaded_file = st.sidebar.file_uploader("Detect", type=['mp4'])
         if uploaded_file is not None:
             is_valid = True
             with st.spinner(text='资源加载中...'):
@@ -293,7 +296,7 @@ def main(opt):
 
     if is_valid:
         print('valid')
-        if st.button('开始检测'):
+        if st.button('Detect'):
 
             run(**vars(opt))
 
