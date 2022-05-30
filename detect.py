@@ -271,13 +271,6 @@ def main(opt):
     <style>
     # MainMenu{visibility: hidden;}
     footer {visibility: hidden;}
-    </style>
-    
-                    '''
-    st.markdown(hide_menu_style, unsafe_allow_html = True)
-    st.markdown(
-    """
-    <style>
     .reportview-container {
         background: url("oil-well.jpg")
     }
@@ -285,9 +278,9 @@ def main(opt):
         background: url("oil-well.jpg")
     }
     </style>
-    """,
-    unsafe_allow_html=True
-)
+    
+                    '''
+    st.markdown(hide_menu_style, unsafe_allow_html = True)
     
     source = ("IMAGE", "VIDEO")
     source_index = st.sidebar.selectbox("Source", range(
