@@ -272,10 +272,10 @@ def main(opt):
 
     if source_index == 0:
         uploaded_file = st.sidebar.file_uploader(
-            "Upload", type=['png', 'jpeg', 'jpg'])
+            "Upload Image", type=['png', 'jpeg', 'jpg'])
         if uploaded_file is not None:
             is_valid = True
-            with st.spinner(text='资源加载中...'):
+            with st.spinner(text='In progress...'):
                 st.sidebar.image(uploaded_file)
                 picture = Image.open(uploaded_file)
                 picture = picture.save(f'data/images/{uploaded_file.name}')
@@ -283,10 +283,10 @@ def main(opt):
         else:
             is_valid = False
     else:
-        uploaded_file = st.sidebar.file_uploader("Detect", type=['mp4'])
+        uploaded_file = st.sidebar.file_uploader("Upload Video", type=['mp4'])
         if uploaded_file is not None:
             is_valid = True
-            with st.spinner(text='资源加载中...'):
+            with st.spinner(text='In progress...'):
                 st.sidebar.video(uploaded_file)
                 with open(os.path.join("data", "videos", uploaded_file.name), "wb") as f:
                     f.write(uploaded_file.getbuffer())
