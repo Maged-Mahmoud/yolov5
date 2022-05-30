@@ -266,14 +266,23 @@ def main(opt):
     
     st.title('Welcome to Drill Bit Failure Detection Project! V 1.0 DEMO')
     st.subheader('Presented to upstream oil and gas industry: Upload images and then Detect the type of failure then define the root cause of failure')
+    st.set_page_config(page_title = 'Drill Bit Failure Detection', page_icon = cv2.imread('images.jpg'))
+    hide_menu_style = '''
+    <style>
+    # MainMenu{visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+    
+                    '''
+    st.markdown(hide_menu_style, unsafe_allow_html = True)
     st.markdown(
     """
     <style>
     .reportview-container {
-        background: url("https://github.com/Maged-Mahmoud/yolov5-Drill-Bit-Failure-Detection/blob/master/oil-well.jpg")
+        background: url("oil-well.jpg")
     }
    .sidebar .sidebar-content {
-        background: url("https://github.com/Maged-Mahmoud/yolov5-Drill-Bit-Failure-Detection/blob/master/oil-well.jpg")
+        background: url("oil-well.jpg")
     }
     </style>
     """,
