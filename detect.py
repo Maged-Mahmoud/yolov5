@@ -271,7 +271,7 @@ def main(opt):
     <style>
     # MainMenu{visibility: hidden;}
     footer {visibility: hidden;}
-    .bg {background-image: url("oil-well.jpg");}
+    .bg {background-image: url("../oil-well.jpg");}
    .sidebar .sidebar-content {background: url("data:oil-well.jpg;base64,{base64.b64encode(open(main_bg, "rb").read()).decode()}");}
     </style>
     
